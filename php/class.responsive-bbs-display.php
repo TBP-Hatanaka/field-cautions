@@ -174,7 +174,7 @@ EOM;
 
 <form action="{$this->url}" method="post" id="bbs-form" class="form-area"{$enctype}>
 	<div class="button-area"><span id="blank">　</span></div>
-	<h1>新規投稿フォーム</h1>{$blockquote_html}
+	<h1>新規スレッド</h1>{$blockquote_html}
 EOM;
 		
 		
@@ -187,7 +187,7 @@ EOM;
 		
 		echo <<<EOM
 
-	<p class="submit"><input type="button" id="write-button" value="書き込む" /><input type="hidden" name="token" value="{$this->token}" />{$hidden_url_no}</p>
+	<p class="submit"><input type="button" id="write-button" value="投稿" /><input type="hidden" name="token" value="{$this->token}" />{$hidden_url_no}</p>
 </form>
 EOM;
 		

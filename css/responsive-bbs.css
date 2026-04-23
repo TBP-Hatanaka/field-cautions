@@ -1,0 +1,441 @@
+@charset "utf-8";
+
+
+/* -- form.form-area -------------------------------------------------------------------------------- */
+
+form.form-area {
+	width: 1000px;
+	margin: 40px auto;
+	background: rgba( 255, 255, 255, 1.0 );
+	border: 1px solid #cccccc;
+	border-radius: 7px;
+	box-shadow: 0 0 7px rgba( 0, 0, 0, 0.2 );
+	position: relative;
+	overflow: hidden;
+}
+
+form.form-area h1 {
+	width: calc( 90% - ( 1 * ( 6em * 0.8 + 40px + 2px + 10px ) ) );
+	padding: 2px 0;
+	font-size: 125%;
+	position: absolute;
+	left: 5%;
+	top: 20px;
+}
+
+form.form-area dl {
+	width: 90%;
+	margin: 0 auto;
+}
+
+form.form-area dl:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+form.form-area dl dt {
+	clear: both;
+	width: 30%;
+	float: left;
+	border-top: 1px solid #cccccc;
+	padding: 20px 0;
+	text-align: right;
+}
+
+form.form-area dl dd {
+	width: 65%;
+	float: left;
+	border-top: 1px solid #cccccc;
+	padding: 25px 0 20px 5%;
+}
+
+form.form-area dl dt:first-child,
+form.form-area dl dt:first-child+dd {
+	border: none;
+}
+
+form.form-area dl dt span {
+	display: block;
+	font-size: 80%;
+	color: #3377ff;
+	font-family: serif;
+}
+
+form.form-area dl dt span.required,
+form.form-area dl dt span.optional {
+	display: inline-block;
+	float: left;
+	color: #ffffff;
+	line-height: 1;
+	padding: 9px 9px;
+	border-radius: 3px;
+	font-family: inherit;
+}
+
+form.form-area dl dt span.required {
+	background: #d9534f;
+	border: 1px solid #d43f3a;
+}
+
+form.form-area dl dt span.optional {
+	background: #337ab7;
+	border: 1px solid #2e6da4;
+}
+
+form.form-area dl dd span.error-blank,
+form.form-area dl dd span.url-check {
+	display: block;
+	color: #ff0000;
+	margin-top: 5px;
+}
+
+
+form.form-area input[type="text"] {
+	width: calc( 100% - 4% - 2px );
+	padding: 7px 2%;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	background: #fafafa;
+	-webkit-appearance: none;
+	font-size: 16px;
+	font-family: inherit;
+}
+
+form.form-area input.title {
+	width: 80%;
+}
+
+form.form-area input.name {
+	width: 50%;
+}
+
+form.form-area textarea {
+	display: block;
+	width: calc( 100% - 4% - 2px );
+	height: 200px;
+	padding: 7px 2%;
+	resize: vertical;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	background: #fafafa;
+	-webkit-appearance: none;
+	font-size: 16px;
+	font-family: inherit;
+}
+
+form.form-area input[type="text"]:focus,
+form.form-area textarea:focus {
+	box-shadow: 0px 0px 5px #55ccff;
+	border: 1px solid #55ccff;
+	background: #ffffff;
+}
+
+
+form.form-area p.submit {
+	width: 90%;
+	margin: 0 auto;
+	padding: 20px 0;
+	border-top: 1px solid #cccccc;
+}
+
+form.form-area input[type="button"] {
+	padding: 11px 20px;
+	vertical-align: middle;
+	line-height: 1;
+	background: #5cb85c;
+	border: 1px solid #4cae4c;
+	border-radius: 3px;
+	color: #ffffff;
+	font-family: inherit;
+	-webkit-appearance: none;
+	font-size: 16px;
+	margin-left: 35%;
+}
+
+form.form-area input[type="button"]:hover {
+	cursor: pointer;
+	background: #449d44;
+	border: 1px solid #398439;
+}
+
+
+
+
+/* -- button-area -------------------------------------------------------------------------------- */
+
+div.button-area {
+	padding: 20px 5%;
+	background: #e0e0e0;
+	overflow: hidden;
+}
+
+div.button-area span {
+	display: inline-block;
+	float: right;
+	width: auto;
+	height: auto;
+	color: #ffffff;
+	line-height: 1;
+	padding: 11px 20px;
+	border-radius: 3px;
+	margin-left: 10px;
+}
+
+
+span.delete {
+	background: #d9534f;
+	border: 1px solid #d43f3a;
+}
+
+span.delete:hover {
+	cursor: pointer;
+	background: #c9302c;
+	border: 1px solid #ac2925;
+}
+
+
+
+
+/* -- span.loading -------------------------------------------------------------------------------- */
+
+div.loading-layer {
+	width: 100%;
+	height: 100vh;
+	background: rgba( 0, 0, 0, 0.7 );
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 99;
+}
+
+
+span.loading {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border-top: 5px solid rgba( 255, 255, 255, 0.2 );
+	border-right: 5px solid rgba( 255, 255, 255, 0.2 );
+	border-bottom: 5px solid rgba( 255, 255, 255, 0.2 );
+	border-left: 5px solid #ffffff;
+	-webkit-transform: translateZ( 0 );
+	-ms-transform: translateZ( 0 );
+	transform: translateZ( 0 );
+	-webkit-animation: load-circle 1.0s linear infinite;
+	animation: load-circle 1.0s linear infinite;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -30px;
+	margin-left: -30px;
+}
+
+@-webkit-keyframes load-circle {
+	0% {
+		-webkit-transform: rotate( 0deg );
+		transform: rotate( 0deg );
+	}
+	100% {
+		-webkit-transform: rotate( 360deg );
+		transform: rotate( 360deg );
+	}
+}
+
+@keyframes load-circle {
+	0% {
+		-webkit-transform: rotate( 0deg );
+		transform: rotate( 0deg );
+	}
+	100% {
+		-webkit-transform: rotate( 360deg );
+		transform: rotate( 360deg );
+	}
+}
+
+
+
+
+/* -- div.bbs-post -------------------------------------------------------------------------------- */
+
+div.bbs-post {
+	width: 1000px;
+	margin: 40px auto;
+	background: rgba( 255, 255, 255, 1.0 );
+	border: 1px solid #cccccc;
+	border-radius: 7px;
+	box-shadow: 0 0 7px rgba( 0, 0, 0, 0.2 );
+	overflow: hidden;
+}
+
+div.bbs-post h2 {
+	/*width: calc( 90% - ( 3 * ( 4em * 0.8 + 30px + 2px + 10px ) ) );*/
+	width: 90%;
+	margin: 20px auto 10px;
+	padding: 0 0 5px;
+	border-bottom: 1px dotted #cccccc;
+	font-size: 125%;
+}
+
+
+span.new-label {
+	display: inline-block;
+	vertical-align: middle;
+	width: auto;
+	height: auto;
+	color: #ffffff;
+	font-size: 64%;
+	line-height: 1;
+	padding: 9px 10px;
+	background: #f0ad4e;
+	border: 1px solid #eea236;
+	border-radius: 3px;
+	margin-right: 10px;
+}
+
+
+div.bbs-post ul {
+	width: 90%;
+	margin: 10px auto;
+	font-size: 85%;
+}
+
+div.bbs-post ul li {
+	color: #999999;
+}
+
+div.bbs-post p {
+	width: 90%;
+	margin: 20px auto;
+}
+
+
+
+
+/* -- div#page-top -------------------------------------------------------------------------------- */
+
+div#page-top {
+	display: none;
+	width: 50px;
+	height: 50px;
+	background: #ffffff;
+	position: fixed;
+	right: 2.5%;
+	bottom: 20px;
+	z-index: 10;
+	border-radius: 3px;
+	opacity: 0.9;
+	box-shadow: 0 0 7px rgba( 0, 0, 0, 0.2 );
+}
+
+div#page-top:hover {
+	cursor: pointer;
+	color: #106dff;
+	background: rgba( 0, 0, 0, 0.1 );
+}
+
+div#page-top span#arrow-up {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate( -50%, -40% );
+}
+
+div#page-top span#arrow-up:before {
+	display: inline-block;
+	font-family: sans-serif;
+	content: "▲";
+	line-height: 1;
+	font-size: 200%;
+}
+
+
+
+
+
+
+
+
+/* -- responsive ----------------------------------------------------------------------------------------------------------------------- */
+
+/* 1000pixel start */
+@media screen and ( max-width: 1000px ) {
+
+
+/* -- form.form-area -------------------------------------------------------------------------------- */
+
+form.form-area {
+	width: 95%;
+}
+
+form.form-area h1 {
+	width: auto;
+}
+
+form.form-area dl {
+	overflow: visible;
+}
+
+form.form-area dl dt {
+	width: auto;
+	float: none;
+	padding: 20px 0 0px;
+	text-align: left;
+}
+
+form.form-area dl dd {
+	width: auto;
+	float: none;
+	border-top: none;
+	padding: 5px 0 20px 0;
+}
+
+form.form-area dl dt span.required,
+form.form-area dl dt span.optional {
+	margin-right: 10px;
+}
+
+form.form-area input[type="button"] {
+	margin-left: 0;
+}
+
+
+
+
+/* -- button-area -------------------------------------------------------------------------------- */
+
+div.button-area {
+	padding: 20px 5% 10px;
+}
+
+div.button-area span {
+	margin-bottom: 10px;
+}
+
+
+
+
+/* -- div.bbs-post -------------------------------------------------------------------------------- */
+
+div.bbs-post {
+	width: 95%;
+}
+
+div.bbs-post h2 {
+	width: 90%;
+	margin: 20px auto;
+	position: static;
+}
+
+
+}
+/* 1000pixel end */
+
+
+
+
+
+
+
+

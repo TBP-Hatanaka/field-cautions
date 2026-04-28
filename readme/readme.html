@@ -1,0 +1,245 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>スレッド掲示板1_PHP版 の設置と説明</TITLE>
+<LINK rel="stylesheet" href="cgigarage.css" type="text/css">
+</HEAD>
+<BODY>
+<TABLE border="0" width="750">
+  <TBODY>
+    <TR>
+      <TD align="center">
+      <TABLE border="0"width="100%">
+        <TBODY>
+          <TR>
+            <TD><IMG src="image1.gif" width="140" height="61" border="0"></TD>
+            <TD align="center" width="600"><IMG src="bbs.gif" width="338" height="61" border="0"><BR>
+            <P>《　スレッド掲示板1_PHP版 の設置と説明　》</P>
+</TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      <HR>
+      <TABLE border="0" width="100%">
+        <TBODY>
+          <TR>
+            <TD valign="top">
+            <P align="right"><B>主な機能</B></P>
+            </TD>
+            <TD align="left">
+            <UL>
+              <LI>スレッドを書ける掲示板です。
+              <LI>ウェブ上から管理画面にパスワードでアクセスして、各種設定を変えることが出来ます。
+              <LI>日本語変換ライブラリ　<B>jcodepl</B>( <A href="https://srekcah.org/jcode/">https://srekcah.org/jcode/</A> )　を使用しています。
+              <LI>このスクリプトを利用する上での利用規定には、必ず目を通しておいて下さい。スクリプトをダウンロードする場合、無条件に「利用規定」に同意したものとみなします。　　　<A href="https://cgi-garage.com/regulations.html">[ スクリプト利用規定 ]</A><BR>
+              <BR>
+              <LI><B>バージョン3.0への変更点</B><BR>
+              機能の追加はありません。<BR>
+              いくつかバグ修正をしました。<BR>
+              PHP8.4で修正しました。<BR>
+              <BR>
+              <LI><B>以前のバージョンをお使いの方へ</B><BR>
+              最新バージョンに変更する場合は、[admin.php]と[bbs.php]を最新版に変更してください。<BR>
+              <BR>
+            </UL>
+            </TD>
+          </TR>
+          <TR>
+            <TD valign="top"><P align="right"><B>CGIダウンロード</B></P>
+</TD>
+            <TD>
+            <UL>
+              <LI>以下の書庫（圧縮）ファイルをダウンロードします。書庫ファイルは <B>LHA形式</B>となっております。<BR>
+              <TABLE border="0">
+                <TBODY>
+                  <TR>
+                    <TD><B>bbs1_php　Ver 3.0 PHP8.4</B></TD>
+                    <TD>
+                    <P><B><A href="https://cgi-garage.com/down.cgi?files=bbs1_php">bbs1_php.lzh</A></B></P>
+                    </TD>
+                    <TD width="5"><A href="https://cgi-garage.com/down.cgi?files=bbs1_php"><IMG src="foruda14.gif" width="30" height="25" border="0"></A></TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
+              <BR>
+              <LI>ダウンロードできたら 解凍 して下さい。以下のファイルが展開されたのを確認してください。<BR>
+              <B>bbs.php<BR>
+              admin.php<BR>
+              log.cgi<BR>
+              les.cgi<BR>
+              index.html<BR>
+              cgigarage.css<BR>
+              logディレクトリ<BR>
+              tempディレクトリ</B><BR>
+              <B>dataディレクトリ</B><BR>
+              <B>helpディレクトリ</B><BR>
+              <BR>
+              <BR>
+            </UL>
+            </TD>
+          </TR>
+          <TR>
+            <TD valign="top"><P align="right"><B>CGIの設置</B></P>
+</TD>
+            <TD>
+            <UL>
+              <LI><B>cgigarage.css</B> はスタイルシートです。<BR>
+              <BR>
+              <LI><B>readme</B>ディレクトリはこの説明ページだけなので、設置終了後、削除してもかまいません。<BR>
+              <BR>
+              <LI>全体のディレクトリ構成例は以下のとおりとなります。(かっこ内はアクセス権の設定値です。<B>太字</B>は使えれば推奨)<BR>
+              <TABLE border="1">
+                <TBODY>
+                  <TR>
+                    <TD width="379"><BR>
+                    　[ <B>ディレクトリ構成</B> ]<BR>
+                    <BR>
+                    　bbs1_php　ディレクトリ<BR>
+                    　　　 　　　　│
+                    <UL style="list-style-type : none">
+                      <LI>bbs.php　[ 606 or 604 or <B>600</B>]<BR>
+                      admin.php　[ 606 or 604 or <B>600</B>]<BR>
+                      les.cgi　[ 606 or 644 or 604 or <B>600</B>]<BR>
+                      log.cgi　[ 606 or 644 or 604 or <B>600</B>]<BR>
+                      index.html　[ 644 or 604 or <B>600</B>]<BR>
+                      cgigarage.css　[ 644 or 604 ]<BR>
+                      log ディレクトリ　[ 755 or 705 ]<BR>
+                      temp ディレクトリ　[ 707 or 705 ]<BR>
+                      data ディレクトリ　[ 755 or 705 ]<BR>
+                      help ディレクトリ　[ 755 or 705 ]<BR>
+                      
+                    
+                    </UL>
+                    <BR>
+                    <BR>
+                    </TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
+              <BR>
+              <LI><B>admin.php</B> をブラウザで開き、<B>ヘルプファイル</B>を見ながら初期設定を行ってください。<BR>
+              初期パスワードは「<B>pass</B>」です。必ず変更してください。<BR>
+              <BR>
+              <LI>ページのデザインを変更する場合は、<B>index.html</B> を変更してください。<BR>
+              <B>ページ下部の著作権表示は消さないで下さい。<BR>
+              </B><BR>
+              <LI><B>bbs.php</B> にアクセスして動作確認をしてください。<BR>
+              <BR>
+              <BR>
+            </UL>
+            </TD>
+          </TR>
+          <TR>
+            <TD valign="top"><P align="right"><B>ファイルの転送</B></P></TD>
+            <TD>
+            <UL>
+              <LI>スクリプトファイル及びログファイルは<B>「テキストモード」</B>で、GIF画像は<B>「バイナリモード」</B>でＦＴＰファイル転送します。ファイル転送の仕方は以下のページを参考にしてください。<BR>
+              <BR>
+              <LI>転送後、以下のとおり <B>パーミッション</B> を設定します。<BR>
+              <TABLE border="1" bgcolor="#ccccff">
+                <TBODY>
+                  <TR>
+                    <TD align="center" bgcolor="#ccccff">ファイル名</TD>
+                    <TD align="center" bgcolor="#ccccff">パーミッション</TD>
+                    <TD align="center" bgcolor="#ccccff">転送モード</TD>
+                  </TR>
+                  <TR>
+                    <TD align="center" bgcolor="#ffffff">bbs1_php ディレクトリ</TD>
+                    <TD align="center" bgcolor="#ffffff">755 or 705</TD>
+                    <TD align="center" bgcolor="#ffffff">バイナリ</TD>
+                  </TR>
+                  <TR>
+                    <TD align="center" bgcolor="#ffffff">admin.php</TD>
+                    <TD align="center" bgcolor="#ffffff">606 or 604 or <B>600</B></TD>
+                    <TD align="center" bgcolor="#ffffff">アスキー/テキスト</TD>
+                  </TR>
+                  <TR>
+                    <TD align="center" bgcolor="#ffffff">bbs.php</TD>
+                    <TD align="center" bgcolor="#ffffff">606 or 604 or <B>600</B></TD>
+                    <TD align="center" bgcolor="#ffffff">アスキー/テキスト</TD>
+                  </TR>
+                  <TR>
+                    <TD align="center" bgcolor="#ffffff">log.cgi</TD>
+                    <TD align="center" bgcolor="#ffffff">606 or 644 or 604 or <B>600</B></TD>
+                    <TD align="center" bgcolor="#ffffff">アスキー/テキスト</TD>
+                  </TR>
+                  <TR>
+                    <TD bgcolor="#ffffff" align="center">les.cgi</TD>
+                    <TD align="center" bgcolor="#ffffff">606 or 644 or 604 or <B>600</B></TD>
+                    <TD align="center" bgcolor="#ffffff">アスキー/テキスト</TD>
+                  </TR>
+                  <TR>
+                    <TD align="center" bgcolor="#ffffff">index.html</TD>
+                    <TD align="center" bgcolor="#ffffff">644 or 604 or <B>600</B></TD>
+                    <TD align="center" bgcolor="#ffffff">アスキー/テキスト</TD>
+                  </TR>
+                  <TR>
+                    <TD align="center" bgcolor="#ffffff">cgigarage.css</TD>
+                    <TD align="center" bgcolor="#ffffff">644 or 604</TD>
+                    <TD align="center" bgcolor="#ffffff">アスキー/テキスト</TD>
+                  </TR>
+                  <TR>
+                    <TD align="center" bgcolor="#ffffff">log ディレクトリ</TD>
+                    <TD align="center" bgcolor="#ffffff">755 or 705</TD>
+                    <TD align="center" bgcolor="#ffffff">バイナリ</TD>
+                  </TR>
+                  <TR>
+                    <TD bgcolor="#ffffff" align="center">temp ディレクトリ</TD>
+                    <TD align="center" bgcolor="#ffffff">755 or 705</TD>
+                    <TD align="center" bgcolor="#ffffff">バイナリ</TD>
+                  </TR>
+                  <TR>
+                    <TD align="center" bgcolor="#ffffff">help ディレクトリ</TD>
+                    <TD align="center" bgcolor="#ffffff">755 or 705</TD>
+                    <TD align="center" bgcolor="#ffffff">バイナリ</TD>
+                  </TR>
+                  <TR>
+                    <TD bgcolor="#ffffff" align="center">data ディレクトリ</TD>
+                    <TD align="center" bgcolor="#ffffff">755 or 705</TD>
+                    <TD align="center" bgcolor="#ffffff">バイナリ</TD>
+                  </TR>
+                  <TR>
+                    <TD bgcolor="#ffffff" align="center">log,temp,help,dataディレクトリ内ファイル</TD>
+                    <TD align="center" bgcolor="#ffffff">644 or 604</TD>
+                    <TD align="center" bgcolor="#ffffff">アスキー/テキスト</TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
+              <BR>
+
+<LI>転送と<B>パーミッション</B>の設定が終了したら、<B>admin.php</B>へアクセスしてみてください。パスワードを入力して管理ページに入り各種設定を変えてください。<BR>
+              <BR>
+              <BR>
+ 
+
+            </UL>
+            </TD>
+          </TR>
+          <TR>
+            <TD align="right" valign="top">
+            <P><B>うまく設置できない場合</B></P>
+            </TD>
+            <TD>
+            <UL>
+              <LI>各ファイルの<B>パーミッション</B>を確認してください。<BR>
+              <BR>
+              <LI><B>PHP</B>までのパスがあっているか確認してください。<BR>
+              <BR>
+              <LI>転送モードがあっているか確認してください。<BR>
+              <BR>
+              <LI>それでもだめな場合は、サポート掲示板でもご質問を受け付けていますが、必ずお答えできるわけではありません。どうしてもうまくいかない場合は、あきらめてください。<BR>
+              <BR>
+              <BR>
+            </UL>
+            </TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      <HR>
+      <A href="https://cgi-garage.com/">CGI-GARAGE</A></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY>
+</HTML>

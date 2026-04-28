@@ -1,0 +1,12 @@
+pass=psbuEs7yVmGCE
+temp=index.html
+logfilename=log.cgi
+hyouji=10
+logcount=20
+exhost=localhost
+exstr=bbb ccc
+erchk=OFF
+path=https://cgi-garage.com/bbs1_php/bbs.php
+pagechange=1
+pagechangecount=6
+pattern=0
